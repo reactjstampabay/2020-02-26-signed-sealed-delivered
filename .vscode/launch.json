@@ -15,7 +15,10 @@
             "request": "launch",
             "name": "React App",
             "url": "http://localhost:3002",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${webRoot}/*"
+            }
         }
     ]
 }
