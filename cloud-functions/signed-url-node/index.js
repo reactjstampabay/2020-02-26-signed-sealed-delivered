@@ -50,7 +50,7 @@ exports.signedUrlNode = (req, res) => {
             res.set('Access-Control-Allow-Methods', 'POST');
             // allowed headers can be used during the actual request
             // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers
-            res.set('Access-Control-Allow-Headers', 'Authorization');
+            res.set('Access-Control-Allow-Headers', 'Authorization, Content-Type');
             // how long in seconds the results of a preflight request can be cached
             // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age
             res.set('Access-Control-Max-Age', '3600');
