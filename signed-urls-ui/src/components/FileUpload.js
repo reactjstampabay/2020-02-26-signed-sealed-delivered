@@ -1,9 +1,12 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { saveFile } from '../lib/cloud-storage';
 
 function FileUpload() {
     const onDrop = useCallback(acceptedFiles => {
-        console.log(acceptedFiles);
+        // upload first file only
+        // we would upload all files in a real scenario
+        saveFile(acceptedFiles[0]);
     }, []);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
