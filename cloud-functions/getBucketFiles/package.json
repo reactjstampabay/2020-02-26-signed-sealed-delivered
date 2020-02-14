@@ -1,0 +1,15 @@
+{
+  "name": "get-bucket-files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "GOOGLE_APPLICATION_CREDENTIALS='../.service-account.json' npx functions-framework --port=5866 --target=getBucketFiles --signature-type=http"
+  },
+  "author": "jhampton",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^1.4.0",
+    "@google-cloud/storage": "^4.3.1"
+  }
+}
