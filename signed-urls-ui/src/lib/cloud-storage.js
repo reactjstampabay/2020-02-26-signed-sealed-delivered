@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+// Gets all files in a bucket
+const getBucketFiles = async () => {
+  const { data } = await axios.get(process.env.REACT_APP_GET_BUCKET_FILES);
+  return data;
+};
+
+// Requests a Signed URL, and then saves to cloud storage
 const saveFile = async file => {
   const body = {
     filename: file.name,
@@ -8,7 +15,7 @@ const saveFile = async file => {
   };
 
   // get signed url
-  const { data } = await axios.post(process.env.REACT_APP_SIGNED_URL, body);
+  const { data } = await axios.post(process.env.REACT_APP_GET_SIGNED_URL, body);
 
   // upload image using signed url
   await axios.put(
@@ -22,4 +29,4 @@ const saveFile = async file => {
   );
 };
 
-export { saveFile };
+export { getBucketFiles, saveFile };
