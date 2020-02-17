@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "GOOGLE_APPLICATION_CREDENTIALS='../.service-account.json' npx functions-framework --port=5866 --target=getBucketFiles --signature-type=http"
+    "start": "GOOGLE_APPLICATION_CREDENTIALS='../.service-account.json' node --inspect=0.0.0.0:5865 node_modules/@google-cloud/functions-framework --port=5866 --target=getBucketFiles --signature-type=http"
   },
   "author": "jhampton",
   "license": "ISC",
