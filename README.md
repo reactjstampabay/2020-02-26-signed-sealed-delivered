@@ -22,7 +22,9 @@ The “why”: Handling file uploads at high scale can become a resource intensi
 
 # Speaker Info
 
-`John is a founding member of the ReactJS Tampa Bay Meetup and currently works as an Engineering Manager at GitLab. He previously worked at AgileThought and has been in the Software Industry for ~17 years. He enjoys all technology, and favors Go, Node, and Python.`
+```
+John is a founding member of the ReactJS Tampa Bay Meetup and currently works as an Engineering Manager at GitLab. He previously worked at AgileThought and has been in the Software Industry for ~17 years. He enjoys all technology, and favors Go, Node, and Python.
+```
 
 # Group Info
 
