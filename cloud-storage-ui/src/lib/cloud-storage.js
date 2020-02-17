@@ -23,7 +23,6 @@ const saveFile = async file => {
     filename: file.name,
     bucket: process.env.REACT_APP_FILE_UPLOAD_BUCKET,
     contentType: file.type,
-    action: 'write',
   };
 
   // get write signed url
