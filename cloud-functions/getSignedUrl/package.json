@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "GOOGLE_APPLICATION_CREDENTIALS='../.service-account.json' nodemon --delay 80ms --exec 'kill-port -k 5863/tcp; npx --node-arg=--inspect=0.0.0.0:5863 functions-framework --port=5864 --target=getSignedUrl --signature-type=http'"
+    "start": "GOOGLE_APPLICATION_CREDENTIALS='../.service-account.json' npx --node-arg=--inspect=0.0.0.0:5863 functions-framework --port=5864 --target=getSignedUrl --signature-type=http"
   },
   "author": "jhampton",
   "license": "ISC",
