@@ -5,7 +5,10 @@ import { saveFile } from '../lib/cloud-storage';
 function FileUpload() {
   const onDrop = useCallback(async acceptedFiles => {
     // upload first file only, we might upload all files in a real scenario
-    await saveFile(acceptedFiles[0]);
+    const file = acceptedFiles[0];
+    await saveFile(file);
+
+    toastr.success(`Uploaded ${file.name}`); // eslint-disable-line no-undef
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
