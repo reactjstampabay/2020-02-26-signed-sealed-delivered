@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { saveFile } from '../lib/cloud-storage';
+import { saveFile, getBucketFiles } from '../lib/cloud-storage';
 
-function FileUpload({ loading, setLoading }) {
+function FileUpload({ loading, setLoading, setFiles }) {
   const onDrop = useCallback(async acceptedFiles => {
     setLoading(true);
     // upload first file only, we might upload all files in a real scenario
@@ -10,6 +10,8 @@ function FileUpload({ loading, setLoading }) {
     await saveFile(file);
 
     toastr.success(`Uploaded ${file.name}`); // eslint-disable-line no-undef
+    const files = await getBucketFiles();
+    setFiles(files);
     setLoading(false);
   }, []);
 
