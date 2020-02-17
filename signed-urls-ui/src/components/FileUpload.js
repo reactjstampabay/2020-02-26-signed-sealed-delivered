@@ -4,8 +4,7 @@ import { saveFile } from '../lib/cloud-storage';
 
 function FileUpload() {
   const onDrop = useCallback(async acceptedFiles => {
-    // upload first file only
-    // we would upload all files in a real scenario
+    // upload first file only, we might upload all files in a real scenario
     await saveFile(acceptedFiles[0]);
   }, []);
 
