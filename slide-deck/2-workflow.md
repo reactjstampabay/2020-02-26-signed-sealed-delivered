@@ -5,5 +5,7 @@
 3. Cloud function receives the request and returns a Signed URL that is valid for _1 Minute_.
 4. React Application initiates a _PUT_ request to the Signed URL returned from the cloud function.
 
-[architecture]: https://www.lucidchart.com/documents/view/5619faad-485c-4290-9e08-d1feeaafde8d/0_0 'Architecture'
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;">
+<iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/5619faad-485c-4290-9e08-d1feeaafde8d" id="lANydzavPVMF">
+</iframe>
+</div>
