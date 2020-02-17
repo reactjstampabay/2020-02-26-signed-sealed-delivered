@@ -32,10 +32,6 @@ https://gitlab.com/jhampton/signed-sealed-delivered/-/blob/master/cloud-function
 
 https://gitlab.com/jhampton/signed-sealed-delivered/-/blob/master/cloud-functions/getBucketFiles/index.js
 
-## Running & Debugging functions locally
-
-If time permits, I am happy to walk give a quick demo.
-
 ## Manual Function Deploy
 
 ```
