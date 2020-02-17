@@ -34,7 +34,7 @@ const getSignedUrl = async (req, res) => {
  * @param {Object} res Cloud Function response context
  *                     More info: https://expressjs.com/en/api.html#res
  */
-exports.signedUrlNode = (req, res) => {
+exports.getSignedUrl = (req, res) => {
   try {
     // determines if the response can be shared with the given origin
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
