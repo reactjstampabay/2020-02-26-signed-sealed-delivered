@@ -17,9 +17,9 @@ function App() {
 
   // Handles delete button click
   const deleteBucketFile = async e => {
-    const delUrl = e.currentTarget.dataset.delUrl;
+    const deleteUrl = e.currentTarget.dataset.deleteUrl;
     const filename = e.currentTarget.dataset.fileName;
-    await deleteFile(delUrl);
+    await deleteFile(deleteUrl);
     toastr.success(`Deleted ${filename}!`); // eslint-disable-line no-undef
 
     const files = await getBucketFiles();
