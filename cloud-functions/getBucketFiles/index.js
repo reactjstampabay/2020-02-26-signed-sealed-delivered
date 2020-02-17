@@ -1,20 +1,49 @@
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage();
 
-// gets all files in a bucket, creates signed URLs to stream/delete
+// get a signed url for each file
+const getSignedUrl = async (file, urlConfig) => {
+  const config = Object.assign({}, urlConfig, {
+    expires: Date.now() + 5000 * 60, // five minutes
+  });
+
+  console.log(config);
+
+  const [url] = await file.getSignedUrl(config);
+
+  return url;
+};
+
+// gets all files in a bucket, creates signed URLs to read/delete/save
 const getFiles = async (req, res) => {
+  const results = [];
   const [files] = await storage.bucket('sub-image-upload').getFiles();
 
   // simple iteration to return a subset of file data
-  const json = files.map(f => {
-    return {
+  for (f of files) {
+    const file = {
       name: f.name,
       createdAt: f.metadata.timeCreated,
       contentType: f.metadata.contentType,
     };
-  });
 
-  return res.send(json);
+    file.readUrl = await getSignedUrl(f, {
+      action: 'read',
+    });
+
+    file.saveUrl = await getSignedUrl(f, {
+      action: 'read',
+      promptSaveAs: f.name,
+    });
+
+    file.delUrl = await getSignedUrl(f, {
+      action: 'delete',
+    });
+
+    results.push(file);
+  }
+
+  return res.send(results);
 };
 
 /**
