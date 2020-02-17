@@ -1,7 +1,5 @@
 # **ReactJS Tampa Bay - February 26th, 2020**
 
-# Organizers
-
 ## Jordan Rhodes 🍑
 
 - Software Engineer @ Exzeo (Tampa, FL)
@@ -11,8 +9,6 @@
 
 - Engineering Manager @ GitLab (San Francisco, CA)
 - [@johnrhampton](https://twitter.com/johnrhampton)
-
-# Talk
 
 ## Signed, Sealed, Delivered: Securely uploading and presenting multimedia to cloud storage
 
@@ -24,7 +20,7 @@ create Signed URLs with Cloud Functions and use the browser to directly upload l
 # Speaker Info
 
 ```
-John is a founding member of the ReactJS Tampa Bay Meetup and currently works as an Engineering Manager at GitLab. He previously worked at 
+John is a founding member of the ReactJS Tampa Bay Meetup and currently works as an Engineering Manager at GitLab. He previously worked at
 AgileThought and has been in the Software Industry for ~17 years. He enjoys all technology, and favors Go, Node, and Python.
 ```
 
