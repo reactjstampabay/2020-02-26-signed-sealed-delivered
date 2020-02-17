@@ -25,15 +25,7 @@ const saveFile = async file => {
   const url = await getSignedUrl(config);
 
   // upload image using signed url
-  await axios.put(
-    url,
-    {
-      body: file,
-    },
-    {
-      headers: { 'content-type': file.type },
-    },
-  );
+  await axios.put(url, file, { headers: { 'content-type': file.type } });
 };
 
 export { getBucketFiles, saveFile };
