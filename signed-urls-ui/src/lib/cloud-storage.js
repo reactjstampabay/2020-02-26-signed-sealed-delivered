@@ -6,20 +6,27 @@ const getBucketFiles = async () => {
   return data;
 };
 
-// Requests a Signed URL, and then saves to cloud storage
+// returns a signed URL
+const getSignedUrl = async body => {
+  const { data } = await axios.post(process.env.REACT_APP_GET_SIGNED_URL, body);
+  return data.url;
+};
+
+// Requests a write Signed URL, and then saves to cloud storage
 const saveFile = async file => {
-  const body = {
+  const config = {
     filename: file.name,
     bucket: process.env.REACT_APP_FILE_UPLOAD_BUCKET,
     contentType: file.type,
+    action: 'write',
   };
 
-  // get signed url
-  const { data } = await axios.post(process.env.REACT_APP_GET_SIGNED_URL, body);
+  // get write signed url
+  const url = await getSignedUrl(config);
 
   // upload image using signed url
   await axios.put(
-    data.url,
+    url,
     {
       body: file,
     },
