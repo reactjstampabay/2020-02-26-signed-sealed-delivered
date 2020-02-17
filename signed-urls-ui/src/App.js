@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import FileUpload from './components/FileUpload';
+import Table from './components/Table';
 import { getBucketFiles } from './lib/cloud-storage';
 
 function App() {
@@ -19,9 +20,7 @@ function App() {
       <header className="App-header">
         <FileUpload />
 
-        {files.map(f => {
-          return <span key={f.name}>{f.name}</span>;
-        })}
+        <Table headers={['File Name', 'Created At', 'Content Type']} data={files} />
       </header>
     </div>
   );
