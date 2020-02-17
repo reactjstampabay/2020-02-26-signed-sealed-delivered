@@ -17,7 +17,7 @@ const getSignedUrl = async (file, urlConfig) => {
 // gets all files in a bucket, creates signed URLs to read/delete/save
 const getFiles = async (req, res) => {
   const results = [];
-  const [files] = await storage.bucket('sub-image-upload').getFiles();
+  const [files] = await storage.bucket('ssd-image-upload').getFiles();
 
   // simple iteration to return a subset of file data
   for (f of files) {
