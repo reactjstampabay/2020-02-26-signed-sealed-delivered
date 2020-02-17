@@ -7,8 +7,6 @@ const getSignedUrl = async (file, urlConfig) => {
     expires: Date.now() + 5000 * 60, // five minutes
   });
 
-  console.log(config);
-
   const [url] = await file.getSignedUrl(config);
 
   return url;
