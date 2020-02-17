@@ -6,7 +6,6 @@ import { getBucketFiles } from './lib/cloud-storage';
 
 function App() {
   const [files, setFiles] = useState([]);
-
   useEffect(() => {
     async function fetchData() {
       const files = await getBucketFiles();
@@ -14,11 +13,12 @@ function App() {
     }
     fetchData();
   }, []);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="App">
       <header className="App-header">
-        <FileUpload />
+        <FileUpload loading={loading} setLoading={setLoading} />
 
         <Table headers={['File Name', 'Created At', 'Content Type']} data={files} />
       </header>
