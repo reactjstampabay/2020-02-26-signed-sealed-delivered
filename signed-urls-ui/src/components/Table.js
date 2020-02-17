@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Simple table styled with tailwind
-function Table({ headers, data }) {
+function Table({ headers, data, deleteBucketFile }) {
   if (data.length === 0) {
     return <div />;
   }
@@ -41,8 +41,10 @@ function Table({ headers, data }) {
                 </a>
               </td>
               <td className="border px-4 py-2">
-                <a
-                  href={d.delUrl}
+                <button
+                  onClick={deleteBucketFile}
+                  data-del-url={d.delUrl}
+                  data-file-name={d.name}
                   className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
                 >
                   <svg className="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 80">
@@ -51,7 +53,7 @@ function Table({ headers, data }) {
                       transform="translate(-2.5 -3.17)"
                     />
                   </svg>
-                </a>
+                </button>
               </td>
             </tr>
           );
