@@ -16,6 +16,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // Handles delete button click
+  // if table was massive and changed often, might consider using useMemo or useCallback here
   const deleteBucketFile = async e => {
     const deleteUrl = e.currentTarget.dataset.deleteUrl;
     const filename = e.currentTarget.dataset.fileName;
