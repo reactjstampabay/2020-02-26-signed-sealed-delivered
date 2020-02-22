@@ -1,6 +1,6 @@
 ## Cloud Functions
 
-We will create and deploy two cloud functions written with node
+This project consists of two [cloud functions](https://cloud.google.com/functions/docs/first-nodejs#creating_a_function) written with node. We could have also written these with [Go or Python](https://cloud.google.com/functions/docs/concepts/exec).
 
 `getSignedUrl` - generate and return a signed url that allows a client to upload (PUT) a file to a specific cloud storage bucket
 
@@ -12,7 +12,7 @@ We could have just as easily created 2 routes in a standard REST API to generate
 
 ## Functions Framework
 
-Google's Functions Framework allows you to quickly spin up a local development environment.
+Google's [Functions Framework](https://cloud.google.com/functions/docs/functions-framework) allows you to quickly spin up a local development environment.
 
 When running locally, we need to specify a service account that has permissions to access our GCP resources. Once created, we will select the _Create key_ option for this Service Account and save this key as JSON.
 
@@ -39,8 +39,3 @@ https://gitlab.com/jhampton/signed-sealed-delivered/-/blob/master/cloud-function
 
 gcloud functions deploy getSignedUrl --runtime nodejs8 --trigger-http --project signed-sealed-delivered
 ```
-
-Links:
-
-https://cloud.google.com/functions/docs/first-nodejs#creating_a_function
-https://cloud.google.com/functions/docs/functions-framework
