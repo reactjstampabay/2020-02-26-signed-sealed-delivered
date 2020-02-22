@@ -8,7 +8,7 @@ We will create and deploy two cloud functions written with node
 
 ## Why use cloud functions?
 
-We could have just as easily created 2 routes in a standard REST API to generate signed URLs and return a list of the bucket files. I think functions are a good use case for creating signed URLs - they can scale up and down as needed and it is very easy to provide the bare minimum access in order to do their job or write them in different languages than your typical tech stack.
+We could have just as easily created 2 routes in a standard REST API to generate signed URLs and return a list of the bucket files. I think functions are a good use case for creating signed URLs - they can scale up and down as needed and it is very easy to provide the bare minimum access in order to do their job or write them in different languages than your typical tech stack. Cloud functions were also a quick way to demo this functionality.
 
 ## Functions Framework
 
