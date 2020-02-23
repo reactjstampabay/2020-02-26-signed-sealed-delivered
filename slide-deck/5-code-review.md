@@ -1,15 +1,29 @@
-## App Review
+## Running & Debugging locally
 
-## Run locally
+#### Start UI
 
-## Start UI and Functions
+`$ ./cloud-storage-ui`
 
-## Running & Debugging functions locally
+`$ yarn start`
+
+#### Running and Debugging functions locally
+
+`$ ./cloud-functions/getBucketFiles`
+
+`$ npm start`
+
+`$ ./cloud-functions/getSignedUrl`
+
+`$ npm start`
 
 ## Deploy with GitLab
 
-- Review GitLab CI Yaml
+- Review GitLab CI yml
 
 ## Deployed App
 
 Cloud Storage UI: https://signed-urls-beta.firebaseapp.com/
+
+Get Signed URL: https://us-central1-signed-urls-beta.cloudfunctions.net/getSignedUrl
+
+Get Bucket Files: https://us-central1-signed-urls-beta.cloudfunctions.net/getBucketFiles
