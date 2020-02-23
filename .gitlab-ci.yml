@@ -3,6 +3,7 @@ image: docker:latest
 stages:
   - build-ui
   - deploy-ui
+  - deploy-functions
 
 build-ui:
   stage: build-ui
@@ -20,7 +21,7 @@ build-ui:
   environment:
     name: production
   only:
-    - master
+    - masterS
 
 deploy-ui:
   stage: deploy-ui
@@ -36,5 +37,25 @@ deploy-ui:
     - firebase deploy --only hosting --token $FIREBASE_TOKEN
   environment:
     name: production
+  only:
+    - masterS
+
+deploy-functions:
+  stage: deploy-functions
+  image: google/cloud-sdk:slim
+  before_script:
+    - cd ./cloud-storage-ui
+  script:
+    # create json files for gcloud auth
+    - echo $DEPLOY_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+    # Authenticate using gcloud
+    - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+    # Create shared environment variables
+    - echo $GOOGLE_PRIVATE_KEY >> ./env.yaml
+    - echo $GOOGLE_ACCESS_ID >> ./env.yaml
+    # Deploy getSignedUrl function
+    - gcloud functions deploy getSignedUrl --runtime nodejs8 --trigger-http --env-vars-file ./env.yaml --project $GOOGLE_PROJECT_ID
+  environment:
+    name: staging
   only:
     - master
