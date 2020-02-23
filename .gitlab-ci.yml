@@ -7,6 +7,8 @@ stages:
 build-ui:
   stage: build-ui
   image: node:dubnium
+  before_script:
+    - cd ./cloud-storage-ui
   script:
     - yarn install
     - yarn test
@@ -23,6 +25,8 @@ build-ui:
 deploy-ui:
   stage: deploy-ui
   image: node:dubnium
+  before_script:
+    - cd ./cloud-storage-ui
   dependencies:
     - build-ui
   script:
