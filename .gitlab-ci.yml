@@ -27,11 +27,12 @@ deploy-ui:
   image: node:dubnium
   before_script:
     - cd ./cloud-storage-ui
+    - yarn global add firebase-tools
   dependencies:
     - build-ui
   script:
-    - yarn global add firebase-tools
-    - firebase use --token $FIREBASE_TOKEN signed-sealed-delivered
+    # run firebase init in the ./cloud-storage-ui directory
+    - firebase use --token $FIREBASE_TOKEN signed-urls-beta
     - firebase deploy --only hosting --token $FIREBASE_TOKEN
   environment:
     name: production
