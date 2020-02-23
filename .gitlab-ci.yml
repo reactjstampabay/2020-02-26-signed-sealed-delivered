@@ -12,7 +12,7 @@ build-ui:
   script:
     - yarn install
     - yarn test
-    - yarn build-dev
+    - yarn build
   artifacts:
     paths:
       - build/
