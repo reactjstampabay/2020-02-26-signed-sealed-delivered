@@ -22,7 +22,7 @@ build-ui:
   environment:
     name: production
   only:
-    - masterS
+    - master
 
 deploy-ui:
   stage: deploy-ui
@@ -39,7 +39,7 @@ deploy-ui:
   environment:
     name: production
   only:
-    - masterS
+    - master
 
 deploy-signed-url:
   stage: deploy-signed-url
