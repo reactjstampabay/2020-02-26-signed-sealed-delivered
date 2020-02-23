@@ -1,6 +1,6 @@
 [
   {
-    "origin": ["http://localhost:3002"],
+    "origin": ["http://localhost:3002", "https://signed-urls-beta.firebaseapp.com"],
     "responseHeader": ["Content-Type"],
     "method": ["GET", "HEAD", "DELETE", "PUT"],
     "maxAgeSeconds": 3600
