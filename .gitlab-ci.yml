@@ -4,6 +4,7 @@ stages:
   - build-ui
   - deploy-ui
   - deploy-signed-url
+  - deploy-bucket-files
 
 build-ui:
   stage: build-ui
@@ -53,6 +54,24 @@ deploy-signed-url:
     - echo $GOOGLE_PRIVATE_KEY >> ./env.yaml
     - echo $GOOGLE_ACCESS_ID >> ./env.yaml
     - gcloud functions deploy getSignedUrl --runtime nodejs8 --trigger-http --env-vars-file ./env.yaml --project $GOOGLE_PROJECT_ID
+  environment:
+    name: production
+  only:
+    - master
+
+deploy-bucket-files:
+  stage: deploy-bucket-files
+  image: google/cloud-sdk:slim
+  before_script:
+    - cd ./cloud-functions/getBucketFiles
+  script:
+    # create json files for gcloud auth
+    - echo $DEPLOY_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+    # Authenticate using gcloud
+    - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+    - echo $GOOGLE_PRIVATE_KEY >> ./env.yaml
+    - echo $GOOGLE_ACCESS_ID >> ./env.yaml
+    - gcloud functions deploy getBucketFiles --runtime nodejs8 --trigger-http --env-vars-file ./env.yaml --project $GOOGLE_PROJECT_ID
   environment:
     name: production
   only:
