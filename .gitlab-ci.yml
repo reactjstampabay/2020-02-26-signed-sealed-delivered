@@ -15,7 +15,7 @@ build-ui:
     - yarn build
   artifacts:
     paths:
-      - build/
+      - cloud-storage-ui/build/
     expire_in: 20 mins
   environment:
     name: production
