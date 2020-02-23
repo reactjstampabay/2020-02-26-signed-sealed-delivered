@@ -1,0 +1,35 @@
+image: docker:latest
+
+stages:
+  - build-ui
+  - deploy-ui
+
+build-ui:
+  stage: build-ui
+  image: node:dubnium
+  script:
+    - yarn install
+    - yarn test
+    - yarn build-dev
+  artifacts:
+    paths:
+      - build/
+    expire_in: 20 mins
+  environment:
+    name: production
+  only:
+    - master
+
+deploy-ui:
+  stage: deploy-ui
+  image: node:dubnium
+  dependencies:
+    - build-ui
+  script:
+    - yarn global add firebase-tools
+    - firebase use --token $FIREBASE_TOKEN signed-sealed-delivered
+    - firebase deploy --only hosting --token $FIREBASE_TOKEN
+  environment:
+    name: production
+  only:
+    - master
