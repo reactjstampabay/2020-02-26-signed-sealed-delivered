@@ -6,3 +6,11 @@
 - After you generate a signed URL, anyone who possesses it can use the signed URL to perform specified actions, such as reading an object, within a specified period of time.
 
 _source: https://cloud.google.com/storage/docs/access-control/signed-urls_
+
+## What problem is this solving?
+
+A product I was working on allowed users to upload a bunch of photos, and create/view/download PDFs. Photos were typically taken from mobile devices and could become quite large. PDFs could include up to 8 images per page and averaged ~200 pages.
+
+Our API exposed an endpoint to upload photos, however the size and volume started to cause memory and performance issues. Our initial band aid was to limit the size of the photos, which immediately resulted in user complaints. This also didn't solve the problem as volume continued to be a concern. Increasing available memory helped, but our cloud costs also increased quite a bit. We also ran into challenges when streaming files to the UI from cloud storage via the server.
+
+We stepped back and performed a Root Cause Analysis, which led us to researching Signed URLs.
