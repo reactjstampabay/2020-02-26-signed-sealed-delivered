@@ -7,7 +7,7 @@
 
 _source: https://cloud.google.com/storage/docs/access-control/signed-urls_
 
-## What problem are we trying to solves?
+## What problem are we trying to solve?
 
 A product I was working on allowed users to upload a bunch of photos, and create/view/download PDFs. Photos were typically taken from mobile devices and could become quite large. PDFs could include up to 8 images per page and averaged ~200 pages.
 
