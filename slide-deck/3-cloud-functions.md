@@ -37,5 +37,5 @@ https://gitlab.com/jhampton/signed-sealed-delivered/-/blob/master/cloud-function
 ```
 ./cloud-functions/getSignedUrl
 
-gcloud functions deploy getSignedUrl --runtime nodejs8 --trigger-http --project signed-sealed-delivered
+gcloud functions deploy getSignedUrl --runtime nodejs8 --trigger-http --project signed-urls-beta
 ```
