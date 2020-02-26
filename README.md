@@ -27,7 +27,3 @@ Twitter: [@reactjstampabay](https://twitter.com/reactjstampabay)
 Slack Channel: [https://reactjstampabay.slack.com/](https://reactjstampabay.slack.com/)
 
 Slack Channel Signup/Invite: [http://reactjstampabay-slack.herokuapp.com/](http://reactjstampabay-slack.herokuapp.com/)
-
-GitHub: [https://github.com/reactjstampabay](https://github.com/reactjstampabay)
-
-GitLab: Coming Soon
