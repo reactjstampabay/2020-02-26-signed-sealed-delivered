@@ -17,7 +17,7 @@ In this session we will demonstrate how to create Signed URLs with Cloud Functio
 
 # Speaker Info
 
-John is a founding member of the ReactJS Tampa Bay Meetup and currently works as an Engineering Manager at GitLab. He previously worked at
+John is a founding member of the ReactJS Tampa Bay Meetup (started in May 2016) and currently works as an Engineering Manager at GitLab. He previously worked at
 AgileThought and has been in the Software Industry for ~17 years. He enjoys all technology, and favors Go, Node, and Python.
 
 # Group Info
