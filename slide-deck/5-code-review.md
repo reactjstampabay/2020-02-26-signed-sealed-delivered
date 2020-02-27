@@ -22,6 +22,8 @@
 
 ## Deployed App
 
+**I am migrating the projects below over to strictly firebase - they are currently disabled**
+
 Cloud Storage UI: https://signed-urls-beta.firebaseapp.com/
 
 Get Signed URL: https://us-central1-signed-urls-beta.cloudfunctions.net/getSignedUrl
